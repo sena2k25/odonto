@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dentisys Clínica</title>
+    <meta name="viewport" content="width=400, initial-scale=1.0">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #545454;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .site-header {
+            background: #545454;
+        }
+        .top-banner {
+            background: #d8c075;
+            text-align: center;
+            padding: 14px 0;
+        }
+        .sus-info {
+            font-size: 22px;
+            color: #4d4d4d;
+            font-weight: bold;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 10%;
+        }
+        .header-left {
+            max-width: 50%;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 18px;
+        }
+        .title {
+            font-size: 2.3em;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+        .subtitle {
+            color: #d3d3d3;
+            font-size: 1.1em;
+            margin-bottom: 26px;
+        }
+        .btn-consulta {
+            background: #d8c075;
+            color: #fff;
+            font-weight: bold;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        .btn-consulta:hover {
+            background: #c1ac53;
+        }
+        .header-right {
+            text-align: center;
+        }
+        .foto-especialista {
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 14px;
+            background: #333;
+        }
+        /* Blocos dourados de estatísticas */
+        .bloco-estatisticas {
+            background: #d8c075;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            padding: 30px 0;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #545454;
+        }
+        .estatistica-item span {
+            display: block;
+            font-size: 1.9em;
+            color: #fff;
+        }
+        /* Bloco explicação */
+        .bloco-explicacao {
+            text-align: center;
+            padding: 38px 14px;
+            color: #fff;
+        }
+        .bloco-explicacao h2 {
+            font-size: 1.5em;
+            margin: 16px 0;
+            color: #d8c075;
+        }
+        .bloco-explicacao p {
+            font-size: 1.1em;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+        /* Bloco solução personalizada */
+        .bloco-solucoes {
+            text-align: center;
+            max-width: 900px;
+            margin: 26px auto;
+        }
+        .lista-solucoes {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        .item-solucao {
+            background: #545454;
+            color: #d8c075;
+            border: 1px solid #d8c075;
+            border-radius: 9px;
+            padding: 12px 32px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        /* Grid de sorrisos */
+        .grid-sorrisos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 0 auto 30px auto;
+            max-width: 450px;
+        }
+        .imagem-sorriso {
+            width: 140px;
+            height: 95px;
+            object-fit: cover;
+            border: 2px solid #d8c075;
+            border-radius: 8px;
+            background: #eee;
+        }
+        /* Bloco Sobre */
+        .bloco-sobre {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            max-width: 900px;
+            margin: 50px auto;
+            background: #606060;
+            border-radius: 10px;
+            padding: 35px;
+        }
+        .imagem-sobre {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #333;
+        }
+        .texto-sobre {
+            color: #fff;
+        }
+        .texto-sobre h3 {
+            font-size: 1.3em;
+            color: #d8c075;
+        }
+        /* Bloco Galeria */
+        .galeria {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .imagem-galeria {
+            width: 150px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #444;
+        }
+        /* Bloco Clínica */
+        .bloco-clinica {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #606060;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .imagem-clinica {
+            width: 210px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #dadada;
+        }
+        .info-clinica, .mapa-bloco {
+            color: #fff;
+            font-size: 1.05em;
+        }
+        /* Bloco de depoimentos */
+        .depoimentos-bloco {
+            background: #545454;
+            margin: 60px auto 30px auto;
+            max-width: 950px;
+            border-radius: 11px;
+            padding: 34px 15px;
+            text-align: center;
+        }
+        .depoimentos-titulo {
+            color: #d8c075;
+            margin-bottom: 28px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+        .depoimento-item {
+            background: #606060;
+            border-radius: 8px;
+            color: #fff;
+            padding: 18px;
+            font-size: 1em;
+            border: 1px solid #d8c075;
+        }
+        .avaliacao-google {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        /* Video */
+        .video-bloco {
+            text-align: center;
+            margin: 34px 0;
+        }
+        .video-principal {
+            width: 350px;
+            height: 180px;
+            background: #222;
+            border-radius: 11px;
+        }
+        /* Rodapé */
+        footer {
+            background: #545454;
+            text-align: center;
+            padding: 18px 0 0 0;
+            margin-top: 30px;
+        }
+        .rodape-logo {
+            width: 100px;
+            margin: 8px auto;
+        }
+        .rodape-info {
+            color: #d8c075;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        .rodape-direitos {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        /* Responsivo */
+        @media (max-width: 990px) {
+            .header-content, .bloco-sobre, .bloco-clinica {
+                flex-direction: column;
+                align-items: center;
+                padding: 24px 2px;
+            }
+            .grid-sorrisos, .depoimentos-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-content, .bloco-clinica, .bloco-sobre {
+                padding: 9px 1px;
+            }
+            .header-left, .header-right {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-banner">
+            <span class="sus-info">Não Atendemos pelo SUS</span>
+        </div>
+        <div class="header-content">
+            <div class="header-left">
+                <img src="img/Dentisys-logo.png" alt="Dentisys" class="logo">
+                <h1 class="title">Especialista em lentes de contato dental</h1>
+                <p class="subtitle">Conheça a Senedin Odontologia, referência em estética dental com lentes de contato, trazendo autoestima através de novos sorrisos</p>
+                <a href="http://wa.me/5511996265715" target="_blank" class="btn-consulta">AGENDE SUA CONSULTA</a>
+            </div>
+            <div class="header-right">
+                <img src="img/IMAGEM_COMPLEMENTAR.png" alt="Espaço para imagem do especialista" class="foto-especialista">
+            </div>
+        </div>
+    </header>
+
+    <section class="bloco-estatisticas">
+        <div class="estatistica-item">
+            <span>+3.000</span>
+            lentes transformadas
+        </div>
+        <div class="estatistica-item">
+            <span>+8</span>
+            anos de atuação
+        </div>
+        <div class="estatistica-item">
+            <span>+15.000</span>
+            lives com pacientes
+        </div>
+    </section>
+
+    <section class="bloco-explicacao">
+        <h2>Conquiste o sorriso dos seus sonhos!</h2>
+        <p>
+            Lentes de contato dental são finas e precisas — uma técnica que abrange um universo de alta estética, trazendo resultados naturais e de destaque. Com tecnologia e experiência, a Dentisys entrega harmonia e autoestima por meio de sorrisos personalizados.
+        </p>
+    </section>
+
+    <section class="bloco-solucoes">
+        <div class="lista-solucoes">
+            <div class="item-solucao">Lente de contato personalizada gold</div>
+            <div class="item-solucao">Reabilitação estética</div>
+            <div class="item-solucao">Solução para todos os sorrisos</div>
+        </div>
+        <div class="grid-sorrisos">
+            <img src="img/sorriso1.png" alt="Sorriso 1" class="imagem-sorriso">
+            <img src="img/sorriso2.png" alt="Sorriso 2" class="imagem-sorriso">
+            <img src="img/sorriso3.png" alt="Sorriso 3" class="imagem-sorriso">
+            <img src="img/sorriso4.png" alt="Sorriso 4" class="imagem-sorriso">
+            <img src="img/sorriso5.png" alt="Sorriso 5" class="imagem-sorriso">
+            <img src="img/sorriso6.png" alt="Sorriso 6" class="imagem-sorriso">
+        </div>
+        <a href="http://wa.me/5511996265715" target="_blank" class="btn-consulta">AGENDE SUA CONSULTA</a>
+    </section>
+
+    <section class="bloco-sobre">
+        <img src="img/DrAlanPires.png" alt="Dr Alan Pires" class="imagem-sobre">
+        <div class="texto-sobre">
+            <h3>Dr. Alan Pires, o dentista das estrelas</h3>
+            <p>Com 12 anos de formação e mais de 8 de dedicação à odontologia estética, Dr. Alan Pires atua com excelência e respeito ao paciente. Criador da Dentisys, transforma sorrisos com humanidade, técnica e cuidado individual.</p>
+            <p>Fundador da clínica há 7 anos, já realizou mais de 3 mil transformações com lentes de contato dental e reabilitação estética. Renomado em São Paulo, tem presença em mídias, lives e matérias nacionais.</p>
+        </div>
+    </section>
+
+    <section class="galeria">
+        <img src="img/galeria1.png" alt="Galeria 1" class="imagem-galeria">
+        <img src="img/galeria2.png" alt="Galeria 2" class="imagem-galeria">
+        <img src="img/galeria3.png" alt="Galeria 3" class="imagem-galeria">
+        <img src="img/galeria4.png" alt="Galeria 4" class="imagem-galeria">
+    </section>
+
+    <section class="bloco-clinica">
+        <div>
+            <img src="img/clinica1.png" alt="Foto clínica 1" class="imagem-clinica">
+            <img src="img/clinica2.png" alt="Foto clínica 2" class="imagem-clinica">
+        </div>
+        <div class="info-clinica">
+            <h3>Conheça nossa clínica</h3>
+            <p>Localizada em São Paulo há 7 anos, a Dentisys possui uma infraestrutura moderna e confortável para que todos os pacientes tenham a melhor experiência e resultados. Venha conhecer cada vez mais sorrisos criados com qualidade!</p>
+            <div class="mapa-bloco">
+                <!-- Espaço para o mapa do Google -->
+                <img src="img/mapa.png" alt="Mapa localização clínica" style="width: 230px; height: 110px; border-radius:9px; background:#dadada;">
+            </div>
+            <p><strong>Endereço:</strong> Av. Rio Grande, 67C - Lazer Park<br>São Paulo/SP</p>
+            <a href="http://wa.me/5511996265715" target="_blank" class="btn-consulta">AGENDE SUA CONSULTA</a>
+        </div>
+    </section>
+
+    <section class="depoimentos-bloco">
+        <div class="depoimentos-titulo">O que nossos pacientes dizem?</div>
+        <div class="depoimentos-grid">
+            <div class="depoimento-item">
+                <strong>Daniela Silva</strong><br>
+                ⭐⭐⭐⭐⭐<br>
+                "Fui muito bem atendida. Recomendo a clínica Dentisys!"
+            </div>
+            <div class="depoimento-item">
+                <strong>Marcelo Souza</strong><br>
+                ⭐⭐⭐⭐⭐<br>
+                "Super profissional. Resultado ficou perfeito!"
+            </div>
+            <div class="depoimento-item">
+                <strong>Bianca Lima Tedesco</strong><br>
+                ⭐⭐⭐⭐⭐<br>
+                "Me explicou todo o processo e me deixou segura. Recomendo!"
+            </div>
+            <div class="depoimento-item">
+                <strong>Fernanda Fagundes Souza</strong><br>
+                ⭐⭐⭐⭐⭐<br>
+                "Atendimento maravilhoso e resultado incrível. Clínica excelente!"
+            </div>
+        </div>
+        <div class="avaliacao-google">
+            <span>★★★★★</span><br>
+            Solução Nota Máxima
+        </div>
+    </section>
+
+    <footer>
+        <img src="img/Dentisys-logo.png" alt="Logo Dentisys rodapé" class="rodape-logo">
+        <div class="rodape-info">Volte a ter a liberdade de sorrir</div>
+        <div class="rodape-direitos">© 2025 Dentisys Odontologia. Todos os direitos reservados.<br> Site por Company.</div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
